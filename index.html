@@ -567,7 +567,15 @@
             <h2>Our Little Beauties ♡</h2>
             <p>Pick your favorite and let your beauty shine.</p>
         </div>
+         <div class="magic-area">
 
+    <p>A little compliment is waiting for you... 👀💗</p>
+
+    <button class="magic-button" onclick="roselleMagic()">
+        ✨ Roselle Magic ✨
+    </button>
+
+</div>
         <div class="product-grid">
 
             <div class="card">
@@ -790,28 +798,72 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        function showMessage(message) {
-            const popup = document.getElementById("popup");
 
-            popup.textContent = message;
-            popup.classList.add("show");
+let popupTimer;
 
-            setTimeout(function () {
-                popup.classList.remove("show");
-            }, 2500);
-        }
-        cont compliments = [
-            "okayyy, you're seriously glowing today.✨",
-            "you have such a pretty vibe.🎀",
-            "Honestly,you're a diva.💅",
-            "Main-character energy,but make it elegant".🎗,
-            "Consider this your sign to feel extra pretty today."🎀
-            "You're effortlessly iconic."💫,
-            "That energy? Absolutely lovely."💖,
-            "Just a reminder:You're doing amazing."🦋,
-            "Keep glowing diva.🌸,
-        ];
-        function roselleMagic() { const randomIndex = Math.floor(Math.random() * compliments.length); const compliment = compliments[randomIndex]; const popup = document.getElementById("popup"); clearTimeout(popupTimer); popup.textContent = compliment; popup.classList.add("show"); popupTimer = setTimeout(function () { popup.classList.remove("show"); }, 7000); } </script>
+function showMessage(message) {
+
+    const popup = document.getElementById("popup");
+
+    clearTimeout(popupTimer);
+
+    popup.textContent = message;
+    popup.classList.add("show");
+
+    popupTimer = setTimeout(function () {
+        popup.classList.remove("show");
+    }, 2500);
+}
+
+
+const compliments = [
+
+    "Okayyy, you're seriously glowing today. ✨",
+
+    "You have such a pretty vibe. 🎀",
+
+    "Honestly, you're giving effortless beauty. 🌸",
+
+    "Your style is actually so lovely. 💗",
+
+    "Main-character energy, but make it elegant. 🦋",
+
+    "Consider this your sign to feel extra pretty today. 🎀",
+
+    "You're effortlessly iconic. 💫",
+
+    "That energy? Absolutely lovely. 💖",
+
+    "Just a reminder: you're doing amazing. 🦋",
+
+    "Keep glowing, diva. 🌸"
+
+];
+
+
+function roselleMagic() {
+
+    const randomIndex =
+        Math.floor(Math.random() * compliments.length);
+
+    const compliment =
+        compliments[randomIndex];
+
+    const popup =
+        document.getElementById("popup");
+
+    clearTimeout(popupTimer);
+
+    popup.textContent = compliment;
+
+    popup.classList.add("show");
+
+    popupTimer = setTimeout(function () {
+        popup.classList.remove("show");
+    }, 7000);
+}
+
+</script>
 </body>
 
 </html>

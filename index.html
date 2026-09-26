@@ -800,8 +800,18 @@
                 popup.classList.remove("show");
             }, 2500);
         }
-    </script>
-
+        cont compliments = [
+            "okayyy, you're seriously glowing today.✨",
+            "you have such a pretty vibe.🎀",
+            "Honestly,you're a diva.💅",
+            "Main-character energy,but make it elegant".🎗,
+            "Consider this your sign to feel extra pretty today."🎀
+            "You're effortlessly iconic."💫,
+            "That energy? Absolutely lovely."💖,
+            "Just a reminder:You're doing amazing."🦋,
+            "Keep glowing diva.🌸,
+        ];
+        function roselleMagic() { const randomIndex = Math.floor(Math.random() * compliments.length); const compliment = compliments[randomIndex]; const popup = document.getElementById("popup"); clearTimeout(popupTimer); popup.textContent = compliment; popup.classList.add("show"); popupTimer = setTimeout(function () { popup.classList.remove("show"); }, 7000); } </script>
 </body>
 
 </html>

@@ -4,9 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Roselle Cosmetics ♡</title>
 
     <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -24,7 +30,17 @@
             overflow-x: hidden;
         }
 
-        /* NAVBAR */
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
         nav {
             position: sticky;
             top: 0;
@@ -33,16 +49,16 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px 7%;
-            background: rgba(255, 248, 251, 0.92);
+            padding: 14px 7%;
+            background: rgba(255, 248, 251, 0.95);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid #f1d5df;
         }
 
         .logo {
+            color: #8f4865;
             font-size: 27px;
             font-weight: bold;
-            color: #8f4865;
             letter-spacing: 1px;
             text-decoration: none;
             white-space: nowrap;
@@ -55,11 +71,11 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 28px;
             align-items: center;
+            gap: 18px;
         }
 
-        nav a {
+        nav ul li a {
             color: #704355;
             text-decoration: none;
             font-family: Arial, sans-serif;
@@ -67,11 +83,55 @@
             transition: 0.3s;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             color: #d16d91;
         }
 
-        /* HERO */
+
+        /* =====================================================
+           CART BUTTON
+        ===================================================== */
+
+        .cart-button {
+            position: relative;
+            border: 1px solid #dfb8c7;
+            border-radius: 25px;
+            background: white;
+            color: #a95171;
+            padding: 9px 14px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .cart-button:hover {
+            background: #fff0f5;
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #b85e7e;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
         .hero {
             min-height: 88vh;
             position: relative;
@@ -83,9 +143,21 @@
             overflow: hidden;
 
             background:
-                radial-gradient(circle at 10% 15%, #ffdce9 0, transparent 20%),
-                radial-gradient(circle at 90% 75%, #f7d7e4 0, transparent 23%),
-                linear-gradient(135deg, #fff8fb, #fff1f6);
+                radial-gradient(
+                    circle at 10% 15%,
+                    #ffdce9 0,
+                    transparent 20%
+                ),
+                radial-gradient(
+                    circle at 90% 75%,
+                    #f7d7e4 0,
+                    transparent 23%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fff8fb,
+                    #fff1f6
+                );
         }
 
         .hero-content {
@@ -104,9 +176,9 @@
         }
 
         .hero h1 {
+            color: #71394e;
             font-size: clamp(55px, 9vw, 100px);
             line-height: 0.95;
-            color: #71394e;
             margin-bottom: 25px;
         }
 
@@ -118,22 +190,39 @@
         .hero p {
             max-width: 650px;
             margin: auto;
-            font-family: Arial, sans-serif;
-            line-height: 1.8;
-            font-size: 16px;
             color: #795766;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           HERO ACTIONS
+        ===================================================== */
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
         }
 
         .shop-button {
             display: inline-block;
-            margin-top: 32px;
-            padding: 15px 34px;
+            padding: 15px 32px;
             border-radius: 30px;
             background: #b85e7e;
             color: white;
             text-decoration: none;
             font-family: Arial, sans-serif;
-            box-shadow: 0 12px 30px rgba(184, 94, 126, 0.25);
+
+            box-shadow:
+                0 12px 30px
+                rgba(184, 94, 126, 0.25);
+
             transition: 0.3s;
         }
 
@@ -142,13 +231,104 @@
             background: #9f4d6d;
         }
 
-        /* FLOATING STICKERS */
+        .edit-store-button {
+            padding: 14px 25px;
+            border-radius: 30px;
+            border: 1px solid #d38aa4;
+            background: white;
+            color: #a95171;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+        }
+
+        .edit-store-button:hover {
+            transform: translateY(-5px);
+            background: #fff0f5;
+        }
+
+
+        /* =====================================================
+           ROSSELLE MAGIC
+        ===================================================== */
+
+        .magic-box {
+            max-width: 440px;
+            margin: 25px auto 0;
+            padding: 20px 22px;
+            border: 1px solid #efd4df;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.76);
+
+            box-shadow:
+                0 12px 30px
+                rgba(105, 55, 76, 0.08);
+
+            backdrop-filter: blur(8px);
+        }
+
+        .magic-box p {
+            margin-bottom: 14px;
+            color: #876371;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .magic-button {
+            padding: 13px 29px;
+            border: 1px solid #d38aa4;
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #fff0f5
+                );
+
+            color: #a95171;
+            cursor: pointer;
+
+            font-family: Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 22px
+                rgba(174, 88, 120, 0.13);
+
+            transition: 0.3s;
+        }
+
+        .magic-button:hover {
+            transform:
+                translateY(-4px)
+                scale(1.03);
+
+            box-shadow:
+                0 14px 30px
+                rgba(174, 88, 120, 0.20);
+        }
+
+
+        /* =====================================================
+           FLOATING STICKERS
+        ===================================================== */
+
         .sticker {
             position: absolute;
-            font-size: 42px;
             z-index: 1;
-            animation: floating 4s ease-in-out infinite;
+            font-size: 42px;
             user-select: none;
+
+            animation:
+                floating
+                4s
+                ease-in-out
+                infinite;
         }
 
         .s1 {
@@ -182,35 +362,46 @@
         }
 
         @keyframes floating {
-            0%, 100% {
-                transform: translateY(0) rotate(-5deg);
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
             }
 
             50% {
-                transform: translateY(-14px) rotate(6deg);
+                transform:
+                    translateY(-14px)
+                    rotate(6deg);
             }
         }
 
-        /* SECTIONS */
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
         section {
             padding: 90px 7%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 48px;
         }
 
         .section-title small {
-            font-family: Arial, sans-serif;
             color: #c56a89;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
             letter-spacing: 4px;
             text-transform: uppercase;
         }
 
         .section-title h2 {
-            font-size: 45px;
             color: #71394e;
+            font-size: 45px;
             margin-top: 10px;
         }
 
@@ -220,16 +411,52 @@
             font-family: Arial, sans-serif;
         }
 
-        /* PRODUCTS */
+
+        /* =====================================================
+           PRODUCTS
+        ===================================================== */
+
         .products {
             background: #ffffff;
+        }
+
+        .product-tools {
+            max-width: 1150px;
+            margin: -10px auto 32px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .product-tools p {
+            color: #8f707e;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .add-product-link {
+            border: none;
+            background: transparent;
+            color: #ae5878;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
         }
 
         .product-grid {
             max-width: 1150px;
             margin: auto;
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 28px;
         }
 
@@ -239,25 +466,59 @@
             border-radius: 25px;
             background: #fffafd;
             border: 1px solid #f0d8e2;
-            box-shadow: 0 12px 35px rgba(105, 55, 76, 0.08);
+
+            box-shadow:
+                0 12px 35px
+                rgba(105, 55, 76, 0.08);
+
             transition: 0.35s;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 45px rgba(105, 55, 76, 0.16);
+
+            box-shadow:
+                0 20px 45px
+                rgba(105, 55, 76, 0.16);
         }
 
-        .card img {
+        .card-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
             width: 100%;
             height: 290px;
-            object-fit: cover;
             display: block;
+            object-fit: cover;
             transition: 0.5s;
         }
 
-        .card:hover img {
+        .card:hover .card-image img {
             transform: scale(1.04);
+        }
+
+        .badge {
+            position: absolute;
+            left: 14px;
+            top: 14px;
+            z-index: 2;
+
+            padding: 7px 12px;
+            border-radius: 20px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.94
+                );
+
+            color: #b75d7d;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
         }
 
         .card-content {
@@ -267,8 +528,16 @@
 
         .card-content h3 {
             color: #71394e;
-            font-size: 23px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 7px;
+        }
+
+        .price {
+            color: #b15878;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 9px;
         }
 
         .card-content p {
@@ -278,73 +547,57 @@
             line-height: 1.6;
         }
 
-        .card-button {
-            display: inline-block;
+        .card-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 9px;
             margin-top: 16px;
-            padding: 9px 18px;
+        }
+
+        .add-cart-button {
+            padding: 10px 18px;
             border: 1px solid #d38aa4;
-            border-radius: 20px;
-            color: #ae5878;
+            border-radius: 22px;
             background: white;
+            color: #ae5878;
             cursor: pointer;
             font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
             transition: 0.3s;
         }
 
-        .card-button:hover {
+        .add-cart-button:hover {
             background: #c66d8c;
             color: white;
         }
 
-        .badge {
-            position: absolute;
-            left: 14px;
-            top: 14px;
-            padding: 7px 12px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.94);
-            color: #b75d7d;
+        .remove-product {
+            border: none;
+            background: transparent;
+            color: #a97d8a;
+            cursor: pointer;
             font-family: Arial, sans-serif;
-            font-size: 12px;
+            font-size: 11px;
         }
 
-        /* ABOUT */
-        .about {
-            background:
-                radial-gradient(circle at 85% 15%, #ffe0eb, transparent 20%),
-                #fff3f7;
-        }
 
-        .about-box {
-            max-width: 900px;
-            margin: auto;
-            padding: 55px 40px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.75);
-            border: 1px solid #f0d6e0;
-            border-radius: 32px;
-            box-shadow: 0 15px 40px rgba(100, 50, 70, 0.06);
-        }
+        /* =====================================================
+           FEATURES
+        ===================================================== */
 
-        .about-box h2 {
-            font-size: 43px;
-            color: #71394e;
-            margin-bottom: 20px;
-        }
-
-        .about-box p {
-            font-family: Arial, sans-serif;
-            color: #765462;
-            line-height: 1.9;
-        }
-
-        /* FEATURES */
         .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
             max-width: 1000px;
             margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
         }
 
         .feature {
@@ -366,13 +619,66 @@
         }
 
         .feature p {
-            font-family: Arial, sans-serif;
             color: #876371;
+            font-family: Arial, sans-serif;
             font-size: 13px;
             line-height: 1.6;
         }
 
-        /* QUOTE */
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    #ffe0eb,
+                    transparent 20%
+                ),
+                #fff3f7;
+        }
+
+        .about-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 55px 40px;
+            text-align: center;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.75
+                );
+
+            border: 1px solid #f0d6e0;
+            border-radius: 32px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(100, 50, 70, 0.06);
+        }
+
+        .about-box h2 {
+            color: #71394e;
+            font-size: 43px;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            color: #765462;
+            font-family: Arial, sans-serif;
+            line-height: 1.9;
+        }
+
+
+        /* =====================================================
+           QUOTE
+        ===================================================== */
+
         .quote {
             background: #71394e;
             color: white;
@@ -393,7 +699,11 @@
             opacity: 0.8;
         }
 
-        /* CONTACT */
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
         .contact {
             text-align: center;
             background: #fff9fb;
@@ -406,85 +716,478 @@
         }
 
         .contact p {
-            font-family: Arial, sans-serif;
             color: #876371;
-        }
-
-        .contact-button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 13px 30px;
-            border: 1px solid #c56b8b;
-            border-radius: 25px;
-            text-decoration: none;
-            color: #a95171;
             font-family: Arial, sans-serif;
-            transition: 0.3s;
         }
 
-        .contact-button:hover {
-            background: #c56b8b;
-            color: white;
-        }
 
-        /* FOOTER */
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
         footer {
-            text-align: center;
             padding: 25px;
             background: #fff0f5;
             color: #876371;
             font-family: Arial, sans-serif;
             font-size: 13px;
+            text-align: center;
         }
 
-        /* POPUP */
+
+        /* =====================================================
+           POPUP
+        ===================================================== */
+
         .popup {
             position: fixed;
             left: 50%;
             bottom: 30px;
-            transform: translate(-50%, 150px);
+            z-index: 5000;
+
+            max-width: 90%;
+            padding: 16px 25px;
+            border-radius: 30px;
+
             background: #71394e;
             color: white;
-            padding: 15px 25px;
-            border-radius: 30px;
+
             font-family: Arial, sans-serif;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-            z-index: 3000;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+
+            box-shadow:
+                0 12px 30px
+                rgba(0, 0, 0, 0.15);
+
+            transform:
+                translate(-50%, 160px);
+
             transition: 0.4s;
         }
 
         .popup.show {
-            transform: translate(-50%, 0);
+            transform:
+                translate(-50%, 0);
         }
 
-        /* TABLET */
-        @media (max-width: 850px) {
+
+        /* =====================================================
+           CART DRAWER
+        ===================================================== */
+
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 3999;
+
+            background:
+                rgba(
+                    55,
+                    30,
+                    42,
+                    0.35
+                );
+
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 4000;
+
+            width: min(420px, 92vw);
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            background: #fff9fb;
+
+            box-shadow:
+                -15px 0 45px
+                rgba(85, 40, 60, 0.18);
+
+            transform: translateX(100%);
+            transition: 0.35s;
+        }
+
+        .cart-drawer.open {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px;
+            border-bottom: 1px solid #efd7e1;
+        }
+
+        .cart-header h2 {
+            color: #71394e;
+            font-size: 25px;
+        }
+
+        .close-cart {
+            border: none;
+            background: transparent;
+            color: #8f4865;
+            cursor: pointer;
+            font-size: 27px;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .empty-cart {
+            padding: 55px 15px;
+            color: #876371;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        .cart-item {
+            display: grid;
+
+            grid-template-columns:
+                65px
+                1fr
+                auto;
+
+            gap: 12px;
+            align-items: center;
+
+            padding-bottom: 17px;
+            margin-bottom: 17px;
+
+            border-bottom:
+                1px solid #f0dce4;
+        }
+
+        .cart-item img {
+            width: 65px;
+            height: 65px;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        .cart-item h4 {
+            color: #71394e;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: #b15878;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 7px;
+        }
+
+        .quantity-controls button {
+            width: 25px;
+            height: 25px;
+
+            border:
+                1px solid #dca6ba;
+
+            border-radius: 50%;
+            background: white;
+            color: #9d506e;
+            cursor: pointer;
+        }
+
+        .quantity-controls span {
+            min-width: 18px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .remove-cart {
+            border: none;
+            background: transparent;
+            color: #b67b8e;
+            cursor: pointer;
+            font-size: 19px;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #efd7e1;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+
+            color: #71394e;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .checkout-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 28px;
+
+            background: #b85e7e;
+            color: white;
+
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .checkout-button:hover {
+            background: #9f4d6d;
+        }
+
+
+        /* =====================================================
+           STORE EDITOR
+        ===================================================== */
+
+        .editor-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 6000;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                rgba(
+                    50,
+                    25,
+                    38,
+                    0.40
+                );
+        }
+
+        .editor-overlay.open {
+            display: flex;
+        }
+
+        .editor-box {
+            width: min(560px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+
+            padding: 28px;
+
+            background: #fffafd;
+
+            border: 1px solid #f0d8e2;
+            border-radius: 28px;
+
+            box-shadow:
+                0 25px 70px
+                rgba(80, 35, 55, 0.22);
+        }
+
+        .editor-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .editor-header h2 {
+            color: #71394e;
+            font-size: 28px;
+        }
+
+        .close-editor {
+            border: none;
+            background: transparent;
+            color: #8f4865;
+            cursor: pointer;
+            font-size: 27px;
+        }
+
+        .editor-intro {
+            color: #876371;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+
+            color: #71394e;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 12px 13px;
+
+            border:
+                1px solid #e4c4d0;
+
+            border-radius: 15px;
+            outline: none;
+
+            background: white;
+            color: #593444;
+
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #c56b8b;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(
+                    197,
+                    107,
+                    139,
+                    0.10
+                );
+        }
+
+        .form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .form-buttons button {
+            flex: 1;
+            padding: 13px;
+            border-radius: 25px;
+            cursor: pointer;
+
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .cancel-button {
+            border: 1px solid #d38aa4;
+            background: white;
+            color: #a95171;
+        }
+
+        .save-button {
+            border: none;
+            background: #b85e7e;
+            color: white;
+        }
+
+        .editor-note {
+            margin-top: 13px;
+
+            color: #9a7582;
+
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
             .product-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
             .features {
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
             }
 
             .sticker {
                 display: none;
             }
+
         }
 
-        /* MOBILE */
-        @media (max-width: 600px) {
+
+        @media (max-width: 650px) {
+
             nav {
-                height: auto;
-                padding: 18px;
                 flex-direction: column;
                 gap: 12px;
+                padding: 15px 18px;
             }
 
             nav ul {
-                gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
+            }
+
+            .hero {
+                padding: 70px 18px;
+            }
+
+            .hero h1 {
+                font-size: 54px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .shop-button,
+            .edit-store-button {
+                width: 90%;
+                text-align: center;
             }
 
             .product-grid {
@@ -495,10 +1198,6 @@
                 padding: 65px 5%;
             }
 
-            .hero h1 {
-                font-size: 55px;
-            }
-
             .section-title h2 {
                 font-size: 36px;
             }
@@ -506,34 +1205,114 @@
             .quote h2 {
                 font-size: 30px;
             }
+
+            .about-box {
+                padding: 40px 25px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVBAR -->
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
     <nav>
-        <a href="#home" class="logo">
+
+        <a
+            href="#home"
+            class="logo"
+        >
             Roselle <span>♡</span>
         </a>
 
+
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Collection</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#products">
+                    Collection
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+
+                <button
+                    class="cart-button"
+                    onclick="openCart()"
+                >
+                    🛒 Cart
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+            </li>
+
         </ul>
+
     </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
 
-        <div class="sticker s1">🌸</div>
-        <div class="sticker s2">🎀</div>
-        <div class="sticker s3">🦋</div>
-        <div class="sticker s4">✨</div>
-        <div class="sticker s5">♡</div>
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div class="sticker s1">
+            🌸
+        </div>
+
+        <div class="sticker s2">
+            🎀
+        </div>
+
+        <div class="sticker s3">
+            🦋
+        </div>
+
+        <div class="sticker s4">
+            ✨
+        </div>
+
+        <div class="sticker s5">
+            ♡
+        </div>
+
 
         <div class="hero-content">
 
@@ -541,228 +1320,234 @@
                 Beauty · Softness · Confidence
             </div>
 
+
             <h1>
                 Welcome to<br>
                 <span>Roselle</span> Cosmetics
             </h1>
 
+
             <p>
-                A little dreamy corner of beauty where pretty colors,
-                glowing moments and everyday makeup come together. ♡
+                A dreamy little corner of beauty where
+                pretty colors, glowing moments and
+                everyday makeup come together. ♡
             </p>
 
-            <a class="shop-button" href="#products">
-                Explore the Collection ✨
-            </a>
+
+            <div class="hero-actions">
+
+                <a
+                    class="shop-button"
+                    href="#products"
+                >
+                    Explore the Collection ✨
+                </a>
+
+
+                <button
+                    class="edit-store-button"
+                    onclick="openEditor()"
+                >
+                    Edit Your Store 🎀
+                </button>
+
+            </div>
+
+
+            <!-- ROSSELLE MAGIC -->
+
+            <div class="magic-box">
+
+                <p>
+                    A little compliment is waiting for you... 👀💗
+                </p>
+
+                <button
+                    class="magic-button"
+                    onclick="roselleMagic()"
+                >
+                    ✨ Roselle Magic ✨
+                </button>
+
+            </div>
 
         </div>
 
     </section>
 
-    <!-- PRODUCTS -->
-    <section class="products" id="products">
+
+    <!-- =====================================================
+         PRODUCTS
+    ===================================================== -->
+
+    <section
+        class="products"
+        id="products"
+    >
 
         <div class="section-title">
-            <small>Roselle Collection</small>
-            <h2>Our Little Beauties ♡</h2>
-            <p>Pick your favorite and let your beauty shine.</p>
+
+            <small>
+                Roselle Collection
+            </small>
+
+            <h2>
+                Our Little Beauties ♡
+            </h2>
+
+            <p>
+                Pick your favorite and add it to your cart.
+            </p>
+
         </div>
-         <div class="magic-area">
 
-    <p>A little compliment is waiting for you... 👀💗</p>
 
-    <button class="magic-button" onclick="roselleMagic()">
-        ✨ Roselle Magic ✨
-    </button>
+        <div class="product-tools">
 
-</div>
-        <div class="product-grid">
+            <p>
+                Have your own products?
+                Add them to your collection. 🎀
+            </p>
 
-            <div class="card">
-                <div class="badge">♡ Beauty Pick</div>
-                <img src="images/powder.jpg" alt="Roselle Powder">
+            <button
+                class="add-product-link"
+                onclick="openEditor()"
+            >
+                + Add Your Product
+            </button>
 
-                <div class="card-content">
-                    <h3>Soft Powder</h3>
-                    <p>
-                        A pretty finishing touch for your everyday makeup look.
-                    </p>
+        </div>
 
-                    <button class="card-button"
-                        onclick="showMessage('Soft Powder added to your favorites ♡')">
-                        Love it ♡
-                    </button>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="badge">💋 Lovely</div>
-                <img src="images/lipstick.jpg" alt="Roselle Lipstick">
-
-                <div class="card-content">
-                    <h3>Classic Lipstick</h3>
-                    <p>
-                        A beautiful pop of color for your favorite looks.
-                    </p>
-
-                    <button class="card-button"
-                        onclick="showMessage('Classic Lipstick added to your favorites ♡')">
-                        Love it ♡
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="badge">🌷 Soft Care</div>
-                <img src="images/creams.jpg" alt="Roselle Creams">
-
-                <div class="card-content">
-                    <h3>Beauty Creams</h3>
-                    <p>
-                        A lovely little addition to your beauty-care routine.
-                    </p>
-
-                    <button class="card-button"
-                        onclick="showMessage('Beauty Creams added to your favorites ♡')">
-                        Love it ♡
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="badge">✨ Glow</div>
-                <img src="images/highlighter.jpg" alt="Roselle Highlighter">
-
-                <div class="card-content">
-                    <h3>Glow Highlighter</h3>
-                    <p>
-                        A luminous touch for your favorite makeup moments.
-                    </p>
-
-                    <button class="card-button"
-                        onclick="showMessage('Glow Highlighter added to your favorites ♡')">
-                        Love it ♡
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="badge">🎀 Cute Pick</div>
-                <img src="images/lippies.jpg" alt="Roselle Lippies">
-
-                <div class="card-content">
-                    <h3>Roselle Lippies</h3>
-                    <p>
-                        Sweet little shades for everyday beauty.
-                    </p>
-
-                    <button class="card-button"
-                        onclick="showMessage('Roselle Lippies added to your favorites ♡')">
-                        Love it ♡
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="badge">🌸 Pretty</div>
-                <img src="images/blush.jpg" alt="Roselle Blush">
-
-                <div class="card-content">
-                    <h3>Pretty Blush</h3>
-                    <p>
-                        A soft rosy touch for your favorite makeup look.
-                    </p>
-
-                    <button class="card-button"
-                        onclick="showMessage('Pretty Blush added to your favorites ♡')">
-                        Love it ♡
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="badge">🦋 Special</div>
-                <img src="images/dolly-wink.jpg" alt="Dolly Wink">
-
-                <div class="card-content">
-                    <h3>Dolly Wink</h3>
-                    <p>
-                        A playful beauty favorite for your collection.
-                    </p>
-
-                    <button class="card-button"
-                        onclick="showMessage('Dolly Wink added to your favorites ♡')">
-                        Love it ♡
-                    </button>
-                </div>
-            </div>
-
+        <div
+            class="product-grid"
+            id="productGrid"
+        >
         </div>
 
     </section>
 
-    <!-- FEATURES -->
+
+    <!-- =====================================================
+         FEATURES
+    ===================================================== -->
+
     <section>
 
         <div class="section-title">
-            <small>Why Roselle?</small>
-            <h2>Little Things We Love ✨</h2>
+
+            <small>
+                Why Roselle?
+            </small>
+
+            <h2>
+                Little Things We Love ✨
+            </h2>
+
         </div>
+
 
         <div class="features">
 
-            <div class="feature">
-                <div class="icon">🌸</div>
-                <h3>Pretty Details</h3>
-                <p>
-                    Because the little details make everything more special.
-                </p>
-            </div>
 
             <div class="feature">
-                <div class="icon">🎀</div>
-                <h3>Made With Love</h3>
+
+                <div class="icon">
+                    🌸
+                </div>
+
+                <h3>
+                    Pretty Details
+                </h3>
+
                 <p>
-                    A dreamy collection created for beauty lovers.
+                    Because the little details make
+                    everything more special.
                 </p>
+
             </div>
 
+
             <div class="feature">
-                <div class="icon">✨</div>
-                <h3>Glow Your Way</h3>
+
+                <div class="icon">
+                    🎀
+                </div>
+
+                <h3>
+                    Made With Love
+                </h3>
+
                 <p>
-                    Beauty is about expressing yourself in your own way.
+                    A dreamy collection created for
+                    beauty lovers.
                 </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Glow Your Way
+                </h3>
+
+                <p>
+                    Beauty is about expressing yourself
+                    in your own way.
+                </p>
+
             </div>
 
         </div>
 
     </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <section
+        class="about"
+        id="about"
+    >
 
         <div class="about-box">
 
-            <h2>About Roselle 🌷</h2>
+            <h2>
+                About Roselle 🌷
+            </h2>
 
             <p>
-                Roselle Cosmetics is a dreamy beauty space filled with soft colors,
-                pretty details and a little sparkle. Our collection celebrates
-                creativity, confidence and the fun of makeup. Whether you're getting
-                ready for a special occasion or simply enjoying your everyday routine,
-                Roselle is here to add a little beauty to your day. ♡
+                Roselle Cosmetics is a dreamy beauty space
+                filled with soft colors, pretty details and
+                a little sparkle. Our collection celebrates
+                creativity, confidence and the fun of makeup.
+                Whether you're getting ready for a special
+                occasion or simply enjoying your everyday
+                routine, Roselle is here to add a little
+                beauty to your day. ♡
             </p>
 
         </div>
 
     </section>
 
-    <!-- QUOTE -->
+
+    <!-- =====================================================
+         QUOTE
+    ===================================================== -->
+
     <section class="quote">
 
         <h2>
-            "Beauty is not about being perfect. It's about being beautifully you."
+            "Beauty is not about being perfect.
+            It's about being beautifully you."
         </h2>
 
         <p>
@@ -771,99 +1556,1540 @@
 
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
 
-        <h2>Stay in Touch 🎀</h2>
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <h2>
+            Stay in Touch 🎀
+        </h2>
 
         <p>
-            Follow Roselle Cosmetics and discover more little moments of beauty.
+            Follow Roselle Cosmetics and discover
+            more little moments of beauty.
         </p>
-
-        <a href="#home" class="contact-button">
-            Back to Top ↑
-        </a>
 
     </section>
 
-    <!-- FOOTER -->
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
     <footer>
         © 2026 Roselle Cosmetics · Made with ♡ 🌸
     </footer>
 
-    <!-- POPUP -->
-    <div class="popup" id="popup">
-        Added to your favorites ♡
+
+    <!-- =====================================================
+         POPUP
+    ===================================================== -->
+
+    <div
+        class="popup"
+        id="popup"
+    >
+        Welcome to Roselle ♡
     </div>
 
-    <!-- JAVASCRIPT -->
+
+    <!-- =====================================================
+         CART OVERLAY
+    ===================================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="closeCart()"
+    >
+    </div>
+
+
+    <!-- =====================================================
+         CART
+    ===================================================== -->
+
+    <aside
+        class="cart-drawer"
+        id="cartDrawer"
+    >
+
+        <div class="cart-header">
+
+            <h2>
+                Your Cart 🛒
+            </h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="cartTotal">
+                    Rs. 0
+                </span>
+
+            </div>
+
+
+            <button
+                class="checkout-button"
+                onclick="checkout()"
+            >
+                Continue to Checkout ✨
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         STORE EDITOR
+    ===================================================== -->
+
+    <div
+        class="editor-overlay"
+        id="editorOverlay"
+    >
+
+        <div class="editor-box">
+
+            <div class="editor-header">
+
+                <h2>
+                    Edit Your Store 🎀
+                </h2>
+
+                <button
+                    class="close-editor"
+                    onclick="closeEditor()"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <p class="editor-intro">
+
+                Add your own product name, price,
+                description and product picture.
+
+            </p>
+
+
+            <form
+                id="productForm"
+                onsubmit="addCustomProduct(event)"
+            >
+
+                <div class="form-group">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input
+                        id="productName"
+                        type="text"
+                        placeholder="Example: Rose Glow Blush"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productPrice">
+                        Price
+                    </label>
+
+                    <input
+                        id="productPrice"
+                        type="number"
+                        min="0"
+                        step="1"
+                        placeholder="1299"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        placeholder="Write a short description..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productImage">
+                        Product Picture
+                    </label>
+
+                    <input
+                        id="productImage"
+                        type="file"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        onclick="closeEditor()"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-button"
+                    >
+                        Add Product ♡
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <p class="editor-note">
+
+                Your custom products are saved in this
+                browser. For a real multi-device store,
+                connect the template to a database/backend.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
     <script>
 
-let popupTimer;
+        /* =====================================================
+           SAMPLE PRODUCTS
+        ===================================================== */
 
-function showMessage(message) {
+        const sampleProducts = [
 
-    const popup = document.getElementById("popup");
+            {
+                id: "sample1",
+                name: "Soft Powder",
+                price: 1299,
+                image: "images/powder.jpg",
+                description:
+                    "A pretty finishing touch for your everyday makeup look.",
+                badge: "♡ Beauty Pick",
+                custom: false
+            },
 
-    clearTimeout(popupTimer);
+            {
+                id: "sample2",
+                name: "Classic Lipstick",
+                price: 1499,
+                image: "images/lipstick.jpg",
+                description:
+                    "A beautiful pop of color for your favorite looks.",
+                badge: "💋 Lovely",
+                custom: false
+            },
 
-    popup.textContent = message;
-    popup.classList.add("show");
+            {
+                id: "sample3",
+                name: "Beauty Creams",
+                price: 1699,
+                image: "images/creams.jpg",
+                description:
+                    "A lovely little addition to your beauty-care routine.",
+                badge: "🌷 Soft Care",
+                custom: false
+            },
 
-    popupTimer = setTimeout(function () {
-        popup.classList.remove("show");
-    }, 2500);
-}
+            {
+                id: "sample4",
+                name: "Glow Highlighter",
+                price: 1399,
+                image: "images/highlighter.jpg",
+                description:
+                    "A luminous touch for your favorite makeup moments.",
+                badge: "✨ Glow",
+                custom: false
+            },
+
+            {
+                id: "sample5",
+                name: "Roselle Lippies",
+                price: 1199,
+                image: "images/lippies.jpg",
+                description:
+                    "Sweet little shades for everyday beauty.",
+                badge: "🎀 Cute Pick",
+                custom: false
+            },
+
+            {
+                id: "sample6",
+                name: "Pretty Blush",
+                price: 1299,
+                image: "images/blush.jpg",
+                description:
+                    "A soft rosy touch for your favorite makeup look.",
+                badge: "🌸 Pretty",
+                custom: false
+            },
+
+            {
+                id: "sample7",
+                name: "Roselle Radiant Foundation",
+                price: 1599,
+                image: "images/dolly-wink.jpg",
+                description:
+                    "A soft, radiant foundation for a fresh everyday makeup look.",
+                badge: "✨ Roselle Favorite",
+                custom: false
+            }
+
+        ];
 
 
-const compliments = [
+        /* =====================================================
+           CUSTOM PRODUCTS
+        ===================================================== */
 
-    "Okayyy, you're seriously glowing today. ✨",
-
-    "You have such a pretty vibe. 🎀",
-
-    "Honestly, you're giving effortless beauty. 🌸",
-
-    "Your style is actually so lovely. 💗",
-
-    "Main-character energy, but make it elegant. 🦋",
-
-    "Consider this your sign to feel extra pretty today. 🎀",
-
-    "You're effortlessly iconic. 💫",
-
-    "That energy? Absolutely lovely. 💖",
-
-    "Just a reminder: you're doing amazing. 🦋",
-
-    "Keep glowing, diva. 🌸"
-
-];
+        let customProducts =
+            JSON.parse(
+                localStorage.getItem(
+                    "roselleCustomProducts"
+                )
+            ) || [];
 
 
-function roselleMagic() {
+        /* =====================================================
+           CART
+        ===================================================== */
 
-    const randomIndex =
-        Math.floor(Math.random() * compliments.length);
+        let cart =
+            JSON.parse(
+                localStorage.getItem(
+                    "roselleCart"
+                )
+            ) || [];
 
-    const compliment =
-        compliments[randomIndex];
 
-    const popup =
-        document.getElementById("popup");
+        let popupTimer;
 
-    clearTimeout(popupTimer);
 
-    popup.textContent = compliment;
+        /* =====================================================
+           STORAGE
+        ===================================================== */
 
-    popup.classList.add("show");
+        function saveProducts() {
 
-    popupTimer = setTimeout(function () {
-        popup.classList.remove("show");
-    }, 7000);
-}
+            localStorage.setItem(
+                "roselleCustomProducts",
+                JSON.stringify(
+                    customProducts
+                )
+            );
 
-</script>
+        }
+
+
+        function saveCart() {
+
+            localStorage.setItem(
+                "roselleCart",
+                JSON.stringify(
+                    cart
+                )
+            );
+
+        }
+
+
+        /* =====================================================
+           PRICE
+        ===================================================== */
+
+        function formatPrice(price) {
+
+            return (
+                "Rs. " +
+                Number(price)
+                    .toLocaleString("en-PK")
+            );
+
+        }
+
+
+        /* =====================================================
+           SAFE TEXT
+        ===================================================== */
+
+        function escapeHTML(text) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+            div.textContent = text;
+
+            return div.innerHTML;
+
+        }
+
+
+        /* =====================================================
+           PRODUCT LIST
+        ===================================================== */
+
+        function getAllProducts() {
+
+            return [
+                ...sampleProducts,
+                ...customProducts
+            ];
+
+        }
+
+
+        /* =====================================================
+           RENDER PRODUCTS
+        ===================================================== */
+
+        function renderProducts() {
+
+            const grid =
+                document.getElementById(
+                    "productGrid"
+                );
+
+
+            const products =
+                getAllProducts();
+
+
+            grid.innerHTML = "";
+
+
+            products.forEach(
+                function(product) {
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    card.className =
+                        "card";
+
+
+                    card.innerHTML = `
+
+                        <div class="card-image">
+
+                            <div class="badge">
+                                ${escapeHTML(
+                                    product.badge
+                                )}
+                            </div>
+
+                            <img
+                                src="${escapeHTML(
+                                    product.image
+                                )}"
+                                alt="${escapeHTML(
+                                    product.name
+                                )}"
+                            >
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <h3>
+                                ${escapeHTML(
+                                    product.name
+                                )}
+                            </h3>
+
+
+                            <div class="price">
+                                ${formatPrice(
+                                    product.price
+                                )}
+                            </div>
+
+
+                            <p>
+                                ${escapeHTML(
+                                    product.description
+                                )}
+                            </p>
+
+
+                            <div class="card-actions">
+
+                                <button
+                                    class="add-cart-button"
+                                    onclick="
+                                        addToCart(
+                                            '${product.id}'
+                                        )
+                                    "
+                                >
+                                    🛒 Add to Cart
+                                </button>
+
+
+                                ${
+                                    product.custom
+                                    ?
+
+                                    `
+                                    <button
+                                        class="remove-product"
+                                        onclick="
+                                            removeCustomProduct(
+                                                '${product.id}'
+                                            )
+                                        "
+                                    >
+                                        Remove
+                                    </button>
+                                    `
+
+                                    :
+
+                                    ""
+                                }
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+
+                    grid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           CART
+        ===================================================== */
+
+        function addToCart(productId) {
+
+            const product =
+                getAllProducts().find(
+                    function(item) {
+
+                        return (
+                            item.id ===
+                            productId
+                        );
+
+                    }
+                );
+
+
+            if (!product) {
+                return;
+            }
+
+
+            const existing =
+                cart.find(
+                    function(item) {
+
+                        return (
+                            item.id ===
+                            productId
+                        );
+
+                    }
+                );
+
+
+            if (existing) {
+
+                existing.quantity += 1;
+
+            } else {
+
+                cart.push({
+
+                    id:
+                        product.id,
+
+                    name:
+                        product.name,
+
+                    price:
+                        product.price,
+
+                    image:
+                        product.image,
+
+                    quantity: 1
+
+                });
+
+            }
+
+
+            saveCart();
+
+            renderCart();
+
+
+            showMessage(
+                product.name +
+                " added to your cart ♡"
+            );
+
+        }
+
+
+        function changeQuantity(
+            productId,
+            amount
+        ) {
+
+            const item =
+                cart.find(
+                    function(product) {
+
+                        return (
+                            product.id ===
+                            productId
+                        );
+
+                    }
+                );
+
+
+            if (!item) {
+                return;
+            }
+
+
+            item.quantity += amount;
+
+
+            if (
+                item.quantity <=
+                0
+            ) {
+
+                cart =
+                    cart.filter(
+                        function(product) {
+
+                            return (
+                                product.id !==
+                                productId
+                            );
+
+                        }
+                    );
+
+            }
+
+
+            saveCart();
+
+            renderCart();
+
+        }
+
+
+        function removeFromCart(
+            productId
+        ) {
+
+            cart =
+                cart.filter(
+                    function(product) {
+
+                        return (
+                            product.id !==
+                            productId
+                        );
+
+                    }
+                );
+
+
+            saveCart();
+
+            renderCart();
+
+        }
+
+
+        function renderCart() {
+
+            const cartItems =
+                document.getElementById(
+                    "cartItems"
+                );
+
+
+            const cartCount =
+                document.getElementById(
+                    "cartCount"
+                );
+
+
+            const cartTotal =
+                document.getElementById(
+                    "cartTotal"
+                );
+
+
+            if (
+                cart.length ===
+                0
+            ) {
+
+                cartItems.innerHTML = `
+
+                    <div class="empty-cart">
+
+                        Your cart is feeling
+                        a little empty. 🌸
+
+                        <br><br>
+
+                        Add something pretty
+                        to get started. ♡
+
+                    </div>
+
+                `;
+
+            } else {
+
+                cartItems.innerHTML =
+                    "";
+
+
+                cart.forEach(
+                    function(item) {
+
+                        const row =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        row.className =
+                            "cart-item";
+
+
+                        row.innerHTML = `
+
+                            <img
+                                src="${escapeHTML(
+                                    item.image
+                                )}"
+                                alt="${escapeHTML(
+                                    item.name
+                                )}"
+                            >
+
+
+                            <div>
+
+                                <h4>
+                                    ${escapeHTML(
+                                        item.name
+                                    )}
+                                </h4>
+
+
+                                <div class="cart-item-price">
+                                    ${formatPrice(
+                                        item.price
+                                    )}
+                                </div>
+
+
+                                <div class="quantity-controls">
+
+                                    <button
+                                        onclick="
+                                            changeQuantity(
+                                                '${item.id}',
+                                                -1
+                                            )
+                                        "
+                                    >
+                                        −
+                                    </button>
+
+
+                                    <span>
+                                        ${item.quantity}
+                                    </span>
+
+
+                                    <button
+                                        onclick="
+                                            changeQuantity(
+                                                '${item.id}',
+                                                1
+                                            )
+                                        "
+                                    >
+                                        +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="remove-cart"
+                                onclick="
+                                    removeFromCart(
+                                        '${item.id}'
+                                    )
+                                "
+                            >
+                                ×
+                            </button>
+
+                        `;
+
+
+                        cartItems.appendChild(
+                            row
+                        );
+
+                    }
+                );
+
+            }
+
+
+            const count =
+                cart.reduce(
+                    function(
+                        total,
+                        item
+                    ) {
+
+                        return (
+                            total +
+                            item.quantity
+                        );
+
+                    },
+                    0
+                );
+
+
+            const total =
+                cart.reduce(
+                    function(
+                        sum,
+                        item
+                    ) {
+
+                        return (
+                            sum +
+                            Number(
+                                item.price
+                            ) *
+                            item.quantity
+                        );
+
+                    },
+                    0
+                );
+
+
+            cartCount.textContent =
+                count;
+
+
+            cartTotal.textContent =
+                formatPrice(
+                    total
+                );
+
+        }
+
+
+        /* =====================================================
+           OPEN / CLOSE CART
+        ===================================================== */
+
+        function openCart() {
+
+            document
+                .getElementById(
+                    "cartDrawer"
+                )
+                .classList.add(
+                    "open"
+                );
+
+
+            document
+                .getElementById(
+                    "cartOverlay"
+                )
+                .classList.add(
+                    "open"
+                );
+
+        }
+
+
+        function closeCart() {
+
+            document
+                .getElementById(
+                    "cartDrawer"
+                )
+                .classList.remove(
+                    "open"
+                );
+
+
+            document
+                .getElementById(
+                    "cartOverlay"
+                )
+                .classList.remove(
+                    "open"
+                );
+
+        }
+
+
+        /* =====================================================
+           CHECKOUT
+        ===================================================== */
+
+        function checkout() {
+
+            if (
+                cart.length ===
+                0
+            ) {
+
+                showMessage(
+                    "Your cart is empty. Add something first ♡"
+                );
+
+                return;
+            }
+
+
+            let orderSummary =
+                "ORDER SUMMARY%0A%0A";
+
+
+            cart.forEach(
+                function(item) {
+
+                    orderSummary +=
+                        encodeURIComponent(
+                            item.name +
+                            " x " +
+                            item.quantity +
+                            " = " +
+                            formatPrice(
+                                item.price *
+                                item.quantity
+                            )
+                        ) +
+                        "%0A";
+
+                }
+            );
+
+
+            const total =
+                cart.reduce(
+                    function(
+                        sum,
+                        item
+                    ) {
+
+                        return (
+                            sum +
+                            Number(
+                                item.price
+                            ) *
+                            item.quantity
+                        );
+
+                    },
+                    0
+                );
+
+
+            orderSummary +=
+                "%0ATotal: " +
+                encodeURIComponent(
+                    formatPrice(
+                        total
+                    )
+                );
+
+
+            showMessage(
+                "Demo checkout created! Connect your payment/order system here ✨"
+            );
+
+
+            console.log(
+                decodeURIComponent(
+                    orderSummary
+                )
+            );
+
+        }
+
+
+        /* =====================================================
+           EDITOR
+        ===================================================== */
+
+        function openEditor() {
+
+            document
+                .getElementById(
+                    "editorOverlay"
+                )
+                .classList.add(
+                    "open"
+                );
+
+        }
+
+
+        function closeEditor() {
+
+            document
+                .getElementById(
+                    "editorOverlay"
+                )
+                .classList.remove(
+                    "open"
+                );
+
+        }
+
+
+        /* =====================================================
+           READ IMAGE
+        ===================================================== */
+
+        function readImageFile(
+            file
+        ) {
+
+            return new Promise(
+                function(
+                    resolve,
+                    reject
+                ) {
+
+                    const reader =
+                        new FileReader();
+
+
+                    reader.onload =
+                        function() {
+
+                            resolve(
+                                reader.result
+                            );
+
+                        };
+
+
+                    reader.onerror =
+                        function() {
+
+                            reject(
+                                new Error(
+                                    "Could not read image."
+                                )
+                            );
+
+                        };
+
+
+                    reader.readAsDataURL(
+                        file
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           ADD CUSTOM PRODUCT
+        ===================================================== */
+
+        async function addCustomProduct(
+            event
+        ) {
+
+            event.preventDefault();
+
+
+            const name =
+                document
+                    .getElementById(
+                        "productName"
+                    )
+                    .value
+                    .trim();
+
+
+            const price =
+                Number(
+                    document
+                        .getElementById(
+                            "productPrice"
+                        )
+                        .value
+                );
+
+
+            const description =
+                document
+                    .getElementById(
+                        "productDescription"
+                    )
+                    .value
+                    .trim();
+
+
+            const imageInput =
+                document
+                    .getElementById(
+                        "productImage"
+                    );
+
+
+            let image =
+                "";
+
+
+            if (
+                imageInput.files &&
+                imageInput.files[0]
+            ) {
+
+                const file =
+                    imageInput.files[0];
+
+
+                if (
+                    file.size >
+                    1200000
+                ) {
+
+                    showMessage(
+                        "Please choose an image smaller than 1.2 MB."
+                    );
+
+                    return;
+
+                }
+
+
+                try {
+
+                    image =
+                        await readImageFile(
+                            file
+                        );
+
+                } catch {
+
+                    showMessage(
+                        "The image could not be loaded."
+                    );
+
+                    return;
+
+                }
+
+            } else {
+
+                image =
+                    "data:image/svg+xml;charset=UTF-8," +
+                    encodeURIComponent(
+                        `
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="800"
+                            height="600"
+                        >
+
+                            <rect
+                                width="100%"
+                                height="100%"
+                                fill="#fff0f5"
+                            />
+
+                            <text
+                                x="50%"
+                                y="50%"
+                                text-anchor="middle"
+                                dominant-baseline="middle"
+                                fill="#9f5a73"
+                                font-size="34"
+                            >
+                                Your Product ♡
+                            </text>
+
+                        </svg>
+                        `
+                    );
+
+            }
+
+
+            const newProduct = {
+
+                id:
+                    "custom-" +
+                    Date.now(),
+
+                name:
+                    name,
+
+                price:
+                    price,
+
+                description:
+                    description,
+
+                image:
+                    image,
+
+                badge:
+                    "✨ Your Product",
+
+                custom:
+                    true
+
+            };
+
+
+            customProducts.push(
+                newProduct
+            );
+
+
+            saveProducts();
+
+            renderProducts();
+
+
+            document
+                .getElementById(
+                    "productForm"
+                )
+                .reset();
+
+
+            closeEditor();
+
+
+            showMessage(
+                newProduct.name +
+                " added to your collection ♡"
+            );
+
+
+            document
+                .getElementById(
+                    "products"
+                )
+                .scrollIntoView({
+                    behavior:
+                        "smooth"
+                });
+
+        }
+
+
+        /* =====================================================
+           REMOVE CUSTOM PRODUCT
+        ===================================================== */
+
+        function removeCustomProduct(
+            productId
+        ) {
+
+            customProducts =
+                customProducts.filter(
+                    function(product) {
+
+                        return (
+                            product.id !==
+                            productId
+                        );
+
+                    }
+                );
+
+
+            cart =
+                cart.filter(
+                    function(item) {
+
+                        return (
+                            item.id !==
+                            productId
+                        );
+
+                    }
+                );
+
+
+            saveProducts();
+
+            saveCart();
+
+            renderProducts();
+
+            renderCart();
+
+
+            showMessage(
+                "Product removed from your collection."
+            );
+
+        }
+
+
+        /* =====================================================
+           ROSSELLE MAGIC
+        ===================================================== */
+
+        const compliments = [
+
+            "Okayyy, you're seriously glowing today. ✨",
+
+            "You have such a pretty vibe. 🎀",
+
+            "Honestly, you're giving effortless beauty. 🌸",
+
+            "Your style is actually so lovely. 💗",
+
+            "Main-character energy, but make it elegant. 🦋",
+
+            "Consider this your sign to feel extra pretty today. 🎀",
+
+            "You're effortlessly iconic. 💫",
+
+            "That energy? Absolutely lovely. 💖",
+
+            "Just a reminder: you're doing amazing. 🦋",
+
+            "Keep glowing, diva. 🌸",
+
+            "You really know how to make an entrance. ✨",
+
+            "Your vibe is giving soft confidence. 🎀"
+
+        ];
+
+
+        function roselleMagic() {
+
+            const randomIndex =
+                Math.floor(
+                    Math.random() *
+                    compliments.length
+                );
+
+
+            showMessage(
+                compliments[
+                    randomIndex
+                ]
+            );
+
+        }
+
+
+        /* =====================================================
+           POPUP
+        ===================================================== */
+
+        function showMessage(
+            message
+        ) {
+
+            const popup =
+                document.getElementById(
+                    "popup"
+                );
+
+
+            clearTimeout(
+                popupTimer
+            );
+
+
+            popup.textContent =
+                message;
+
+
+            popup.classList.add(
+                "show"
+            );
+
+
+            popupTimer =
+                setTimeout(
+                    function() {
+
+                        popup.classList.remove(
+                            "show"
+                        );
+
+                    },
+                    7000
+                );
+
+        }
+
+
+        /* =====================================================
+           MODAL OUTSIDE CLICK
+        ===================================================== */
+
+        document
+            .getElementById(
+                "editorOverlay"
+            )
+            .addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target ===
+                        this
+                    ) {
+
+                        closeEditor();
+
+                    }
+
+                }
+            );
+
+
+        /* =====================================================
+           ESCAPE KEY
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    closeCart();
+
+                    closeEditor();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           START WEBSITE
+        ===================================================== */
+
+        renderProducts();
+
+        renderCart();
+
+    </script>
+
 </body>
 
 </html>
